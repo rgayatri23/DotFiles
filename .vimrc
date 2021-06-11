@@ -4,26 +4,45 @@ set tabstop=4
 set softtabstop=4
 set expandtab
 set shiftwidth=4
+" indent as much as it can
 set smartindent
+" set line number
 set nu
-"set nowrap
+" Don't wrap the lines at the end
+set nowrap
+" Does case insensitive search until some letter is capitalized
 set ignorecase 
 set smartcase
+" Don't create swap file. Gets rid of .swp files
 set noswapfile
+" No backup either
 set nobackup
+" Maintain an undodir. You have to creat this by yourself
 set undodir=~/.vim/undodir
+" Undofile.
 set undofile
+" incremental search
 set incsearch
+" highlight search
+set hlsearch
+" highlight matching braces
+set showmatch
 
 "set colorcolumn=120
 "highlight ColorColumn ctermbg=0 guibg=grey
 
 call plug#begin('~/.vim/plugged')
+" Colorscheme
 Plug 'gruvbox-community/gruvbox'
+" Git plugin
 Plug 'tpope/vim-fugitive'
+" vim manual
 Plug 'vim-utils/vim-man'
+" Undotree plugin
 Plug 'mbbill/undotree'
+" Colorscheme
 Plug 'flazz/vim-colorschemes'
+" YouCompleteMe - Awesome auto completer
 Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 
@@ -48,4 +67,28 @@ let g:netrw_winsize = 25
 
 " Let YCM server be found by vimrc. Needs full path
 set encoding=utf-8
-let g:ycm_global_ycm_extra_conf='/global/homes/r/rgayatri/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='/Users/rgayatri/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+" YCM commands
+nnoremap <silent> <leader>gd : YcmCompleter GoTo<CR>
+nnoremap <silent> <leader>gf : YcmCompleter FixIt<CR>
+
+" Map commands
+" h - window left
+nnoremap <leader>h :wincmd h<CR>
+" j - window down
+nnoremap <leader>j :wincmd j<CR>
+" k - window up
+nnoremap <leader>k :wincmd k<CR>
+" l - window left
+nnoremap <leader>l :wincmd l<CR>
+
+" UndoTree
+nnoremap <leader>u :UndotreeShow<CR>
+" NERDTree
+nnoremap <leader>o :NERDTree<CR>
+
+" Folding in vim
+"set foldmethod=marker
+"set foldmethod=indent
+set foldmethod=syntax
+
