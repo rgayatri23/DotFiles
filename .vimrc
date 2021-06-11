@@ -47,6 +47,5 @@ let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
 " Let YCM server be found by vimrc. Needs full path
-let g:ycm_global_ycm_extra_conf='/Users/rgayatri/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
-
-
+set encoding=utf-8
+let g:ycm_global_ycm_extra_conf='/global/homes/r/rgayatri/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
