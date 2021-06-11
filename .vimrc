@@ -1,107 +1,52 @@
-set encoding=utf-8
-
 syntax on
-set backspace=2
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" Keep Plugin commands between vundle#begin/end.
-
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'Valloric/ListToggle'
-"Plugin 'jeaye/color_coded'
-Plugin 'rhysd/vim-clang-format'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rhubarb'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-dispatch'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'edkolev/tmuxline.vim'
-Plugin 'majutsushi/tagbar'
-"Plugin 'kien/ctrlp.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'bogado/file-line'
-Plugin 'martinda/Jenkinsfile-vim-syntax'
-"Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'embear/vim-localvimrc'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-" turn line numbers on
-set number
-" highlight matching braces
-set showmatch
-" Turn tabs into spaces
+set noerrorbells
+set tabstop=4 
+set softtabstop=4
 set expandtab
-" SEARCH
-set hlsearch
-" Highlight current line
-set cursorline
+set shiftwidth=4
+set smartindent
+set nu
+"set nowrap
+set ignorecase 
+set smartcase
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
 
-" Highlight unwanted spaces
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+"set colorcolumn=120
+"highlight ColorColumn ctermbg=0 guibg=grey
 
-let g:lt_location_list_toggle_map = '<leader>l'
-let g:lt_quickfix_list_toggle_map = '<leader>q'
-let g:lt_height = 10
+call plug#begin('~/.vim/plugged')
+Plug 'gruvbox-community/gruvbox'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-utils/vim-man'
+Plug 'mbbill/undotree'
+Plug 'flazz/vim-colorschemes'
+Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/nerdtree'
 
-" Configure clang-format
-let g:clang_format#detect_style_file = 1
-let g:clang_format#auto_format = 1
-let g:clang_format#command = "/opt/local/bin/clang-format"
+call plug#end()
 
-" Configure ctags
-let g:tagbar_ctags_bin = "/opt/local/bin/ctags"
-let g:tagbar_ctags_options = ["/Users/qdi/Projects/isocpp/gcc/libstdc++-v3/myopts.cfn"]
+colorscheme gruvbox
+"colorscheme molokai
+set background=dark
 
-" Smarter tab line
-let g:airline#extensions#tabline#enabled = 1
+" Ignores git dir during cntrl-p searches.
+let g:ctrlp_user_command = ['.git/']
+" Don't cache for cntrl-p (said to be faster).
+let g:cntrlp_use_caching = 0
 
-if has('gui_running')
-  set background=light
-else
-  set background=dark
-endif
-let g:solarized_termcolors=256
-colorscheme solarized
-" Toggle background
-call togglebg#map("<F5>")
+" My leader key is the space-bar
+let mapleader = " "
 
-" Localvimrc
-let g:localvimrc_ask = 0
+" Rules on how you want to NERDTREE to split open your files.
+let g:netrw_browse_split = 2
+let g:netrw_banner = 0
+let g:netrw_winsize = 25
 
-" Folding in vim
-"set foldmethod=marker
-"set foldmethod=indent
-set foldmethod=syntax
+" Let YCM server be found by vimrc. Needs full path
+let g:ycm_global_ycm_extra_conf='/Users/rgayatri/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+
+
