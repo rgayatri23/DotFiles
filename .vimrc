@@ -43,13 +43,18 @@ Plug 'mbbill/undotree'
 " Colorscheme
 Plug 'flazz/vim-colorschemes'
 " YouCompleteMe - Awesome auto completer
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
+Plug 'rhysd/vim-clang-format'
+Plug 'scrooloose/nerdcommenter'
+Plug 'vim-airline/vim-airline'
+Plug 'majutsushi/tagbar'
 
 call plug#end()
 
-colorscheme gruvbox
-"colorscheme molokai
+colorscheme PaperColor
+"colorscheme gruvbox
+"colorscheme darkZ
 set background=dark
 
 " Ignores git dir during cntrl-p searches.
@@ -57,7 +62,7 @@ let g:ctrlp_user_command = ['.git/']
 " Don't cache for cntrl-p (said to be faster).
 let g:cntrlp_use_caching = 0
 
-" My leader key is the space-bar
+" my leader key is the space-bar
 let mapleader = " "
 
 " Rules on how you want to NERDTREE to split open your files.
@@ -65,12 +70,13 @@ let g:netrw_browse_split = 2
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
-" Let YCM server be found by vimrc. Needs full path
-set encoding=utf-8
-let g:ycm_global_ycm_extra_conf='/Users/rgayatri/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
-" YCM commands
-nnoremap <silent> <leader>gd : YcmCompleter GoTo<CR>
-nnoremap <silent> <leader>gf : YcmCompleter FixIt<CR>
+"" Let YCM server be found by vimrc. Needs full path
+"set encoding=utf-8
+"let g:ycm_global_ycm_extra_conf='/global/homes/r/rgayatri/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+"let g:loaded_youcompleteme = 1
+"" YCM commands
+"nnoremap <silent> <leader>gd : YcmCompleter GoTo<CR>
+"nnoremap <silent> <leader>gf : YcmCompleter FixIt<CR>
 
 " Map commands
 " h - window left
@@ -92,3 +98,18 @@ nnoremap <leader>o :NERDTree<CR>
 "set foldmethod=indent
 set foldmethod=syntax
 
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
+" Configure clang-format
+let g:clang_format#detect_style_file = 1
+let g:clang_format#auto_format = 0
+let g:clang_format#command = "/usr/common/software/llvm/8.0.1/bin/clang-format"
+nnoremap <leader>f :ClangFormat<CR>
+nnoremap <leader>fd :ClangFormatAutoDisable<CR>
+
+" Set backspace functionality
+set backspace=indent,eol,start
+
+" For Tagbar
+nmap <F8> :TagbarToggle<CR>
