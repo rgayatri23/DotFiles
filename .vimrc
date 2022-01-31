@@ -45,16 +45,16 @@ Plug 'flazz/vim-colorschemes'
 " YouCompleteMe - Awesome auto completer
 "Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
-Plug 'rhysd/vim-clang-format'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'majutsushi/tagbar'
+Plug 'rhysd/vim-clang-format'
 
 call plug#end()
 
-colorscheme PaperColor
+"colorscheme PaperColor
 "colorscheme gruvbox
-"colorscheme darkZ
+colorscheme darkZ
 set background=dark
 
 " Ignores git dir during cntrl-p searches.
@@ -113,3 +113,12 @@ set backspace=indent,eol,start
 
 " For Tagbar
 nmap <F8> :TagbarToggle<CR>
+
+" Trying powerline once again
+set rtp+=/global/u1/r/rgayatri/.local/cori/3.8-anaconda-2020.11/lib/python3.8/site-packages/powerline/bindings/vim
+set rtp+=/global/u1/r/rgayatri/.local/cori/3.8-anaconda-2020.11/lib/python3.8/site-packages/powerline/bindings/nvim
+
+" Buffer mappings
+nnoremap <leader>bp :bp<CR>
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>bd :bd<CR>
