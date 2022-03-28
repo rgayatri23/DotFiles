@@ -1,0 +1,63 @@
+#Host cori
+#    HostName cori.nersc.gov
+#    User rgayatri
+#    IdentityFile /Users/rgayatri/.ssh/nersc
+#Host cori10
+#    HostName cori10-224.nersc.gov
+#    User rgayatri
+#    IdentityFile /Users/rgayatri/.ssh/nersc
+#
+#
+#HOST summit
+#    HostName summit.olcf.ornl.gov
+#    User rgayatri
+#
+#HOST ascent
+#    HostName login1.ascent.olcf.ornl.gov
+#    User rgayatri
+#
+Host cori
+    HostName cori.nersc.gov
+    User rgayatri
+    IdentityFile /Users/rgayatri/.ssh/nersc
+Host cori10
+    HostName cori10-224.nersc.gov
+    User rgayatri
+    IdentityFile /Users/rgayatri/.ssh/nersc
+Host cori11
+    HostName cori11-224.nersc.gov
+    User rgayatri
+    IdentityFile /Users/rgayatri/.ssh/nersc
+Host dtn
+    HostName dtn02.nersc.gov
+    User rgayatri
+    IdentityFile /Users/rgayatri/.ssh/nersc
+
+HOST maeve
+    HostName maeve.dhcp.lbl.gov
+    User rgayatri
+
+HOST summit
+    HostName summit.olcf.ornl.gov
+    User rgayatri
+
+HOST spock
+    HostName spock.olcf.ornl.gov
+    User rgayatri
+
+HOST ascent
+    HostName login1.ascent.olcf.ornl.gov
+    User rgayatri
+
+HOST jlse
+    HostName login.jlse.anl.gov
+    User rgayatri
+
+HOST tulip
+    HostName tulip-gw1.hpccoe.rdlabs.ext.hpe.com
+    #    HostName tulip.cray.com
+    User coe0294
+
+HOST theta
+    HostName theta.alcf.anl.gov
+    User rgayatri
