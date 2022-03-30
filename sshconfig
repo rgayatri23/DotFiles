@@ -1,21 +1,4 @@
-#Host cori
-#    HostName cori.nersc.gov
-#    User rgayatri
-#    IdentityFile /Users/rgayatri/.ssh/nersc
-#Host cori10
-#    HostName cori10-224.nersc.gov
-#    User rgayatri
-#    IdentityFile /Users/rgayatri/.ssh/nersc
-#
-#
-#HOST summit
-#    HostName summit.olcf.ornl.gov
-#    User rgayatri
-#
-#HOST ascent
-#    HostName login1.ascent.olcf.ornl.gov
-#    User rgayatri
-#
+
 Host cori
     HostName cori.nersc.gov
     User rgayatri
@@ -45,19 +28,33 @@ HOST spock
     HostName spock.olcf.ornl.gov
     User rgayatri
 
+HOST crusher
+    HostName crusher.olcf.ornl.gov
+    User rgayatri
+
 HOST ascent
     HostName login1.ascent.olcf.ornl.gov
     User rgayatri
 
 HOST jlse
     HostName login.jlse.anl.gov
-    User rgayatri
+    User ac.gayatri
+    IdentityFile ~/.ssh/id_rsa
 
 HOST tulip
     HostName tulip-gw1.hpccoe.rdlabs.ext.hpe.com
-    #    HostName tulip.cray.com
     User coe0294
 
 HOST theta
     HostName theta.alcf.anl.gov
     User rgayatri
+
+HOST voltan
+    HostName Voltan.dhcp.lbl.gov
+    User rgayatri
+
+Host cori10
+ServerAliveInterval 100
+
+#
+#PreferredAuthentications keyboard-interactive,password
