@@ -121,9 +121,9 @@ set rtp+=/global/u1/r/rgayatri/.local/cori/3.8-anaconda-2020.11/lib/python3.8/si
 set rtp+=/global/u1/r/rgayatri/.local/cori/3.8-anaconda-2020.11/lib/python3.8/site-packages/powerline/bindings/nvim
 
 " Buffer mappings
-nnoremap <leader>bp :bp<CR>
-nnoremap <leader>bn :bn<CR>
-nnoremap <leader>bd :bd<CR>
+nnoremap <leader>p :bp<CR>
+nnoremap <leader>n :bn<CR>
+nnoremap <leader>d :bd<CR>
 
 " Commands for vimwiki
 filetype plugin on
